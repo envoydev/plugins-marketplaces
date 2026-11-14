@@ -29,16 +29,19 @@ The marketplace name stays `envoydev`, so every plugin id (`alfred-code@envoydev
 ### Moving from the old marketplace
 
 Until 2026-11 the `envoydev` marketplace was served from `envoydev/alfred-code`. That copy is gone, so an account
-that added it re-adds the marketplace from here. Removing a marketplace uninstalls the plugins installed from it, so
-install each one again at the scope it had (`claude plugin list` shows them before you start); the ids and the
-`enabledPlugins` lines in your settings files stay the same:
+that added it points the marketplace here. Adding it again under the same name re-points it in place: every plugin
+installed from it stays installed, and the ids and the `enabledPlugins` lines in your settings files stay the same.
+Where a settings file lists `envoydev` under `extraKnownMarketplaces` (an account that added it with
+`claude plugin marketplace add` has it in `~/.claude/settings.json`), change that entry's `repo` to
+`envoydev/plugins-marketplaces` first - the CLI refuses an add whose source differs from it:
 
 ```bash
-claude plugin list                                   # note each @envoydev plugin and its scope
-claude plugin marketplace remove envoydev
 claude plugin marketplace add envoydev/plugins-marketplaces
-claude plugin install alfred-code@envoydev --scope local   # and the others, each at its own scope
+claude plugin list        # a plugin the catalog no longer lists shows 'not found in marketplace envoydev'
 ```
+
+Do not `claude plugin marketplace remove envoydev` first: removing a marketplace uninstalls every plugin installed from
+it.
 
 An admin who allows marketplaces through `strictKnownMarketplaces` allows
 `{ "source": "github", "repo": "envoydev/plugins-marketplaces" }` in place of the old `envoydev/alfred-code` entry.
