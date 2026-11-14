@@ -5,17 +5,17 @@
     "url": "https://github.com/envoydev"
   },
   "metadata": {
-    "description": "envoydev's Claude Code plugins: Alfred Code (the coding-agent stack), alfred-mods (the session band and /inspect pane) and preferred-tools (the tested MCP servers, set up from one list)."
+    "description": "envoydev's Claude Code plugins: Alfred Code (the coding-agent stack), alfred-mods (the session band and /inspect pane) and alfred-tools (the tested MCP servers, set up from one list)."
   },
   "plugins": [
     {
-      "name": "preferred-tools",
+      "name": "alfred-tools",
       "source": {
         "source": "github",
-        "repo": "envoydev/preferred-tools",
+        "repo": "envoydev/alfred-tools",
         "ref": "main"
       },
-      "description": "The MCP servers and Claude Code plugins its owner has tested and likes, with their install, update, rename and fix procedures: /preferred-tools:install, /preferred-tools:configure, /preferred-tools:update and /preferred-tools:fix.",
+      "description": "The MCP servers its owner has tested and likes, set up for Claude Code and Cursor from one list, with their install, update, rename and fix procedures: /alfred-tools:install, /alfred-tools:configure, /alfred-tools:update and /alfred-tools:fix.",
       "author": {
         "name": "envoydev",
         "url": "https://github.com/envoydev"

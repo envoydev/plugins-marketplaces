@@ -15,14 +15,14 @@ where to find them, so no plugin repo owns the catalog for the others.
 claude plugin marketplace add envoydev/plugins-marketplaces
 claude plugin install alfred-code@envoydev --scope local
 claude plugin install alfred-mods@envoydev
-claude plugin install preferred-tools@envoydev
+claude plugin install alfred-tools@envoydev
 ```
 
 | Plugin | Repo | What it is |
 |---|---|---|
 | `alfred-code` | [envoydev/alfred-code](https://github.com/envoydev/alfred-code) | the coding-agent stack: guided install, update and configure of skills, agents, rules and hooks |
 | `alfred-mods` | [envoydev/alfred-mods](https://github.com/envoydev/alfred-mods) | context, usage, cost, tool failures, agents, cache and plan progress in one band and an `/inspect` pane |
-| `preferred-tools` | [envoydev/preferred-tools](https://github.com/envoydev/preferred-tools) | the MCP servers its owner tested and likes, set up for Claude Code and Cursor from one list |
+| `alfred-tools` | [envoydev/alfred-tools](https://github.com/envoydev/alfred-tools) | the MCP servers its owner tested and likes, set up for Claude Code and Cursor from one list; it was `preferred-tools` until 0.4.0 - install `alfred-tools@envoydev` and run `/alfred-tools:update` |
 
 The marketplace name stays `envoydev`, so every plugin id (`alfred-code@envoydev`, ...) is the one it always was.
 
