@@ -52,7 +52,10 @@ An admin who allows marketplaces through `strictKnownMarketplaces` allows
   the repo, the branch it is served from (`main`, each repo's release branch), its description and category.
 - A release is a merge to that plugin's `main`; nothing here changes for it. Pin an entry to a tag (`ref`) or a commit
   (`sha`) when a plugin should stop floating on `main`.
-- `claude plugin validate --strict .` passes before every commit.
+- An entry carries no `version`: it would only drift from the plugin's own.
+- `npm run check` passes before every commit: `claude plugin validate . --strict`, then
+  `scripts/check-entry-versions.mjs`, which fails on an entry with a `version` (validate checks that only for a
+  relative-path source, and every entry here is a GitHub one).
 
 ## Codex and Cursor
 
